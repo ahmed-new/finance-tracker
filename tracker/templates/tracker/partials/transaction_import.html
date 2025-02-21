@@ -1,0 +1,25 @@
+{% load widget_tweaks %}
+
+<h1 class="mt-8 mb-4 prose prose-2xl text-white">
+    Import Transaction
+</h1>
+
+<form hx-post="{% url 'import' %}"
+hx-encoding="multipart/form-data">
+
+    <div class="mt-4 mb-2">
+
+        <input type="file" name="file" accept=".csv" class="file-input max-w-xs w-full file-input-success text-black">
+
+    </div>
+
+    <button class="btn btn-success">
+        Import
+    </button>
+
+    <button class="btn btn-error" hx-get="{% url 'transactions-list'%}"
+     hx-target="#transaction-block"
+     hx-push-url="/transactions">
+        Cancle
+    </button>
+</form>
