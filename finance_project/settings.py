@@ -55,7 +55,10 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+<<<<<<< HEAD
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
+=======
+>>>>>>> 984d268efde6e6cea50f718c27f0f64f874f9a30
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
