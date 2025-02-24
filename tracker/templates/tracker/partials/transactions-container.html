@@ -42,12 +42,20 @@
 
             <div class="flex items-center justify-between">
                 {% if precentage < 30 %}
-                    <button   class="btn btn-warning">
-                        Get AI Financial Advice
-                    </button>
+                
+                <button class="btn btn-warning"
+                        hx-get="{% url 'get-advice' %}"
+                        hx-vals='{"total_income": "{{ total_income }}", "total_expense": "{{ total_expense }}", "net_income": "{{ net_income }}"}'
+                        hx-target="#transaction-block"
+                        hx-indicator="#spinner12">
+                    Get Advice
+                </button>
+            {% endif %}
+            
 
-                {% endif %}
+            <span id="spinner12" class="loading loading-spinner loading-lg htmx-indicator">
 
+            </span>   
                 
 
                 <a hx-get="{% url 'create-transaction' %}"

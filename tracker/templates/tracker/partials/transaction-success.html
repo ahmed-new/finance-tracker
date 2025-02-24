@@ -3,16 +3,47 @@
     <span>{{ message }}</span>
 </div>
 
+{% if advice %}
 
-<div class="mt-4">
-    <button class="btn btn-success"
-        hx-get="{% url 'create-transaction' %}"
-        hx-target="#transaction-block">
-        Add another
-    </button>
-    <button class="btn btn-success"
-        hx-get="{% url 'transactions-list' %}"
-        hx-target="#transaction-block">
-        View transactions
-      </button>
-</div>
+    <div class="w-full max-w-2xl mx-auto mt-6">
+        <div class="card bg-base-100 shadow-xl p-6">
+            <div class="card-body">
+                <h2 class="card-title text-primary text-2xl">📊 Financial Advice</h2>
+
+                <p class="text-lg"><strong>Total Income:</strong> 
+                    <span class="text-green-500 font-semibold">${{ total_income }}</span>
+                </p>
+                <p class="text-lg"><strong>Total Expenses:</strong> 
+                    <span class="text-red-500 font-semibold">${{ total_expense }}</span>
+                </p>
+                <p class="text-lg"><strong>Remaining Money:</strong> 
+                    <span class="text-blue-500 font-semibold">${{ net_income }}</span>
+                </p>
+
+                <div class="divider"></div>
+
+                <h3 class="text-xl font-bold text-green-800">📢 Advice:</h3>
+                <p class="text-white-600 text-lg">{{ advice }}</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="mt-4">
+        <button class="btn btn-success"
+            hx-get="{% url 'create-transaction' %}"
+            hx-target="#transaction-block">
+            Add another
+        </button>
+
+        
+        <button class="btn btn-success"
+            hx-get="{% url 'transactions-list' %}"
+            hx-target="#transaction-block">
+            << View transactions
+        </button>
+
+        
+    </div>
+

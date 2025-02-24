@@ -62,6 +62,11 @@ MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 ROOT_URLCONF = "finance_project.urls"
 
 TEMPLATES = [
@@ -79,6 +84,7 @@ TEMPLATES = [
         },
     },
 ]
+CSRF_TRUSTED_ORIGINS = ['https://finance-tracker-kbut.onrender.com']
 
 WSGI_APPLICATION = "finance_project.wsgi.application"
 
