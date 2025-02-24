@@ -10,7 +10,8 @@ defusedxml==0.7.1
 diff-match-patch==20241021
 Django==4.2
 django-allauth==0.54.0
-
+python-decouple==3.8
+psycopg2==2.9.10
 django-extensions==3.2.1
 django-filter==23.2
 django-htmx==1.22.0
